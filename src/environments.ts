@@ -1,5 +1,5 @@
 export const environments = {
   dev: '.env',
-  stag: '.env.stag',
-  prod: '.env.prod',
+  stag: '.stag.env',
+  prod: '.prod.env',
 };

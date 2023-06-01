@@ -17,6 +17,7 @@ import { DatabaseModule } from './database/database.module';
       load: [config],
       isGlobal: true,
       validationSchema: Joi.object({
+        PORT: Joi.number().required(),
         MONGO_INITDB_ROOT_USERNAME: Joi.string().required(),
         MONGO_INITDB_ROOT_PASSWORD: Joi.string().required(),
         MONGO_DB: Joi.string().required(),

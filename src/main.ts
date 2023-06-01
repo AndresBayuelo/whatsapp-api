@@ -7,14 +7,14 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('Whatsapp API')
-    .setDescription('The cats API description')
+    .setDescription('Whatsapp API description')
     .setVersion('1.0')
-    .addTag('cats')
+    .addTag('whatsapp-api')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('docs', app, document);
 
   app.enableCors();
-  await app.listen(3000);
+  await app.listen(process.env.PORT || 3000);
 }
 bootstrap();
