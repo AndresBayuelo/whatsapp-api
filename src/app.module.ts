@@ -18,6 +18,7 @@ import { DatabaseModule } from './database/database.module';
       isGlobal: true,
       validationSchema: Joi.object({
         PORT: Joi.number().required(),
+        OPENAI_API_KEY: Joi.string().required(),
         MONGO_INITDB_ROOT_USERNAME: Joi.string().required(),
         MONGO_INITDB_ROOT_PASSWORD: Joi.string().required(),
         MONGO_DB: Joi.string().required(),
@@ -27,7 +28,7 @@ import { DatabaseModule } from './database/database.module';
         VERIFY_TOKEN_WHATSAPP_API: Joi.string().required(),
         TOKEN_WHATSAPP_API: Joi.string().required(),
         PHONE_NUMBER_ID_WHATSAPP_API: Joi.string().required(),
-        OPENAI_API_KEY: Joi.string().required(),
+        URL_WHATSAPP_API: Joi.string().required(),
       }),
     }),
     WhatsappModule,

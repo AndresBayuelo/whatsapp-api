@@ -29,7 +29,7 @@ export class WhatsappService {
     if (mode && token) {
       if (
         mode === 'subscribe' &&
-        token === this.configService.verifyTokenWhatsappApi
+        token === this.configService.whatsappApi.verifyToken
       ) {
         this.logger.log('Webhook validated');
         return challenge;
@@ -164,7 +164,7 @@ export class WhatsappService {
   }
 
   async sendMessage(phoneNumber: string, message: string) {
-    const url = `https://graph.facebook.com/v16.0/${this.configService.phoneNumberIdWhatsappApi}/messages?access_token=${this.configService.tokenWhatsappApi}`;
+    const url = `${this.configService.whatsappApi.url}/${this.configService.whatsappApi.phoneNumberId}/messages?access_token=${this.configService.whatsappApi.token}`;
     const data = {
       messaging_product: 'whatsapp',
       to: phoneNumber,
